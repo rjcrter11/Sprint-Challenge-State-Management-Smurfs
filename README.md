@@ -23,10 +23,24 @@ In this challenge, you are to build a Smurfs village utilizing context or Redux 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] What problem does the context API help solve?
+
+  Prop drilling
+
 - [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  - actions: payloads of info that send data to the store - reducers: pure functions that takes the current state and an action and returns the next state. - store: stores the whole state of an app in an object tree - The store is the ‘single source of truth’ because the only way to change data in the UI is to dispatch actions that change the state with a reducer
+
+* [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+  - Application state is overarching state that several components need to/can use - Component state is specific to the component it’s in - Using component state is good for things like forms
+
 - [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
-- [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+  - Thunk is middleware that allows you to call action creators that return a function instead of an object. It can be used to delay the dispatch of an action or to dispatch only if a certain condition is met
+
+* [ ] What is your favorite state management system you've learned and this sprint? Please explain why!
+
+  - I like redux for axios requests. It feels really straight forward and almost makes more sense to me than doing it without redux. For everything else, I still have a lot of trouble wrapping my head around it…though I’m not really sure why.
 
 ## Project Set Up
 
