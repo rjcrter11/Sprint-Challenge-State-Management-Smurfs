@@ -1,4 +1,5 @@
 const initialState = {
+  fetchingData: false,
   smurfs: [
     {
       name: "Smurf1",
