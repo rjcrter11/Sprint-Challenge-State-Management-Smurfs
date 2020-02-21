@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getSmurf, addSmurf, deleteSmurf } from "../actions";
 import SmurfForm from "./SmurfForm";
+import LoadingSpinner from "./LoadingSpinner";
 
 const SmurfList = ({
   smurfs,
@@ -18,7 +19,7 @@ const SmurfList = ({
   }, [getSmurf]);
 
   if (fetchingData) {
-    return <div>Fetching your smurfs</div>;
+    return <LoadingSpinner />;
   } else if (error) {
     return <div className="error"> {error} </div>;
   }
