@@ -2,16 +2,22 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { getSmurf } from "../actions";
 
-const SmurfList = (props) => {
-  console.log(props);
+const SmurfList = ({ smurfs, fetchingData, error, getSmurf }) => {
+  // console.log(props);
 
   useEffect(() => {
-    props.getSmurf();
-  }, []);
+    getSmurf();
+  }, [getSmurf]);
+
+  if (fetchingData) {
+    return <div>Fetching your smurfs</div>;
+  } else if (error) {
+    return <div className="error"> {error} </div>;
+  }
 
   return (
     <div className="main-container">
-      {props.smurfs.map((smurf) => (
+      {smurfs.map((smurf) => (
         <div className="structure-container">
           <div className="smurfs-container" key={smurf.id}>
             <h2>Name: {smurf.name} </h2>
