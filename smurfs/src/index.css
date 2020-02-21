@@ -2,4 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+
+  background-image: url("https://cdn.pixabay.com/photo/2014/04/02/16/30/mushroom-307469_960_720.png");
+  background-repeat: no-repeat;
 }

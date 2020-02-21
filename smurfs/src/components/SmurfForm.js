@@ -24,7 +24,7 @@ const SmurfForm = (props) => {
       <div className="add-smurf-container">
         <h3>Add a Smurf</h3>
         <form className="form" onSubmit={handleSubmit}>
-          <div className="input-container">
+          <div className="input-container name-input">
             <label htmlFor="name">Name</label>
             <input
               id="name"
@@ -33,6 +33,8 @@ const SmurfForm = (props) => {
               placeholder="Choose a name"
               onChange={handleChanges}
             />
+          </div>
+          <div className="input-container age-input">
             <label htmlFor="age">Age</label>
             <input
               id="age"
@@ -41,6 +43,8 @@ const SmurfForm = (props) => {
               placeholder="How old is your smurf?"
               onChange={handleChanges}
             />
+          </div>
+          <div className="input-container height-input">
             <label htmlFor="height">Height</label>
             <input
               id="height"
@@ -50,7 +54,9 @@ const SmurfForm = (props) => {
               onChange={handleChanges}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className="newSmurf-btn" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
