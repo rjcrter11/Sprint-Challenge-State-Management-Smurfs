@@ -1,12 +1,16 @@
 import {
   FETCH_SMURF_START,
   FETCH_SMURF_SUCCESS,
-  FETCH_SMURF_ERROR
+  FETCH_SMURF_ERROR,
+  ADD_SMURF_START,
+  ADD_SMURF_SUCCESS,
+  ADD_SMURF_ERROR
 } from "../actions";
 
 const initialState = {
   fetchingData: false,
   error: "",
+  posting: false,
   smurfs: [
     {
       name: "Smurf1",
@@ -40,6 +44,25 @@ export const smurfReducer = (state = initialState, action) => {
       return {
         ...state,
         fetchingData: false,
+        error: action.payload
+      };
+    case ADD_SMURF_START:
+      return {
+        ...state,
+        posting: true,
+        error: ""
+      };
+    case ADD_SMURF_SUCCESS:
+      return {
+        ...state,
+        posting: false,
+        error: "",
+        smurfs: action.payload
+      };
+    case ADD_SMURF_ERROR:
+      return {
+        ...state,
+        posting: false,
         error: action.payload
       };
     default:

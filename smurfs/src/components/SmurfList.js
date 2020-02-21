@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getSmurf } from "../actions";
+import { getSmurf, addSmurf } from "../actions";
+import SmurfForm from "./SmurfForm";
 
-const SmurfList = ({ smurfs, fetchingData, error, getSmurf }) => {
+const SmurfList = ({ smurfs, fetchingData, error, getSmurf, addSmurf }) => {
   // console.log(props);
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const SmurfList = ({ smurfs, fetchingData, error, getSmurf }) => {
           </div>
         </div>
       ))}
+      <SmurfForm addSmurf={addSmurf} />
     </div>
   );
 };
@@ -38,4 +40,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { getSmurf })(SmurfList);
+export default connect(mapStateToProps, { getSmurf, addSmurf })(SmurfList);
