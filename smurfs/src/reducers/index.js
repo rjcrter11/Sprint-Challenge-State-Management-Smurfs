@@ -1,5 +1,6 @@
 const initialState = {
   fetchingData: false,
+  error: "",
   smurfs: [
     {
       name: "Smurf1",
